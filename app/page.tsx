@@ -34,6 +34,10 @@ const webAppLd = {
 
 const faq: FaqItem[] = [
   {
+    q: "Can I drive in Japan with my foreign license or an International Driving Permit, and is there a tool that tells me until when?",
+    a: "Yes, this free checker. Enter your license country (and US state), the document you carry (Geneva IDP or an official Japanese translation), your landing date and the IDP issue date: it says whether that route is accepted on NPA's list and gives your last driving day, which is 1 year from landing but never past the IDP's own 1-year validity or your home license's expiry (with the 3-month rule for residents). It also shows whether you can convert to a Japanese license (外免切替). Unofficial guide: confirm with the prefectural police license center.",
+  },
+  {
     q: "Can I drive in Japan with an International Driving Permit?",
     a: "Only with a 1949 Geneva Convention IDP issued by a country that issues that format (for example the US, UK, Canada, Australia, Korea, India, Thailand, the Philippines, Hong Kong). Japan does not accept Vienna-format (1968) IDPs or online 'international license' booklets. Carry the IDP together with your home license and passport.",
   },
