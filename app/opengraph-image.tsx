@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
+
 export const alt = "Japan Driving Check: can I drive in Japan on my license? IDP, translation and 外免切替";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

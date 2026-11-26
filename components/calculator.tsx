@@ -5,6 +5,7 @@ import { CardDisclaimer } from "@/components/card-disclaimer";
 import { ShareBar } from "@/components/share-bar";
 import { COUNTRIES, US_STATES } from "@/lib/countries";
 import { DOCUMENTS, DOCUMENT_LABEL, RESIDENCIES, RESIDENCY_LABEL, type Document, type Residency } from "@/lib/driving";
+import { isGithubPages, pagesSiteUrl } from "@/lib/hosting";
 import { EXAMPLE_SHARED, PUBLIC_URL, resultPath, safeCheck, type Shared } from "@/lib/share";
 
 const field = "mt-2 w-full rounded-xl border border-line bg-black/40 px-3 py-2 text-sm text-foreground focus:border-amber";
@@ -46,7 +47,7 @@ export function Calculator({ initial }: { initial?: Shared }) {
     trips: resident && trips.trim() ? trips.trim().replace(/\s+/g, "") : null,
   };
   const r = safeCheck(shared);
-  const shareUrl = `${PUBLIC_URL}${resultPath(shared)}`;
+  const shareUrl = isGithubPages ? `${pagesSiteUrl(PUBLIC_URL)}/` : `${PUBLIC_URL}${resultPath(shared)}`;
   const conv = r?.conversion;
 
   return (
@@ -192,6 +193,9 @@ export function Calculator({ initial }: { initial?: Shared }) {
                 ) : null,
               )}
               <div className="mt-6">
+                {isGithubPages ? (
+                  <p className="mb-2 text-xs text-muted">Share the checker. A link to this exact result returns when hosting is back.</p>
+                ) : null}
                 <ShareBar url={shareUrl} text={`Can I drive in Japan on a ${r.country.en} license? → ${r.verdictLabel}`} />
               </div>
             </>
